@@ -1,0 +1,20 @@
+2016-07-05T16:55:19.880230> --- rxlora. dst=1 type=0x12 src=10 seq=196 len=36 SNR=6 RSSIpkt=-68 BW=250 CR=4/5 SF=12
+2016-07-05T16:55:19.884648> 2016-07-05T16:55:19.882868
+2016-07-05T16:55:19.887774> rcv ctrl pkt info (^p): 1,18,10,196,36,6,-68
+2016-07-05T16:55:19.890968> splitted in:  [1, 18, 10, 196, 36, 6, -68]
+2016-07-05T16:55:19.898125> (dst=1 type=0x12(DATA WAPPKEY) src=10 seq=196 len=36 SNR=6 RSSI=-68)
+2016-07-05T16:55:19.900891> rcv ctrl radio info (^r): 250,5,12
+2016-07-05T16:55:19.903914> splitted in:  [250, 5, 12]
+2016-07-05T16:55:19.910859> (BW=250 CR=5 SF=12)
+2016-07-05T16:55:19.913495> 2016-07-05T16:55:19.873
+2016-07-05T16:55:19.928623> got first framing byte
+2016-07-05T16:55:19.931369> --> got data prefix
+2016-07-05T16:55:19.934401> --> DATA with_appkey: read app key sequence
+2016-07-05T16:55:19.937116> app key is  [5, 6, 7, 8]
+2016-07-05T16:55:19.940208> in app key list
+2016-07-05T16:55:20.838085> valid app key: accept data
+2016-07-05T16:55:20.840712> rcv msg to log (\!) on ThingSpeak ( 3URHXQFZFTAW79B7 , 3 ): 26.0
+2016-07-05T16:55:20.843441> ( 4
+2016-07-05T16:55:20.846086> ): 35.0 ThingSpeak: will issue curl cmd
+2016-07-05T16:55:20.858442> curl -s -k -X POST --data field3=26.0&field4=35.0&field7=196 https://api.thingspeak.com/update?key=3URHXQFZFTAW79B7
+2016-07-05T16:55:20.861182> ThingSpeak: returned code from server is 5810

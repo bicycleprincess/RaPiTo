@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+  maps.html
+  *socket.js
+  init.js
+  key: AIzaSyBZV7-NN1khnu5e8uyzRkHGj2HLvZykl68
+-->
+<html>
+  <head>
+  <!--
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  -->
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+     <script type="text/javascript">
+       var gateways = {
+  tub: {
+    center: {lat: 52.5125322, lng: 13.3247559},
+    radius: 150
+  },
+  fluxport: {
+    center: {lat: 52.49782, lng: 13.3051813},
+    radius: 250
+  },
+  kadewe: {
+    center: {lat: 52.5016021, lng: 13.3388043},
+    radius: 150
+  },
+  home: {
+    center: {lat: 52.5414599, lng: 13.3502726},
+    radius: 200
+  },
+  schloss: {
+    center: {lat: 52.5209312, lng: 13.2781041},
+    radius: 150
+  }
+};
+
+var iconBase = 'http://localhost:8080/static/';
+
+//var icons = {
+//  m1: {
+//     icon: iconBase + 'green.png'
+//   },
+//  m2: {
+//     icon: iconBase + 'rose.png'
+//   },
+//  m3: {
+//     icon: iconBase + 'blue.png'
+//   },
+//  m4: {
+//     icon: iconBase + 'cheek_pink.png'
+//   },
+//  m5: {
+//     icon: iconBase + 'dark_green.png'
+//   },
+//  m6: {
+//     icon: iconBase + 'pink.png'
+//   },
+//  m7: {
+//     icon: iconBase + 'dark_blue.png'
+//   },
+//  m8: {
+//     icon: iconBase + 'orange.png'
+//   },
+//  m9: {
+//     icon: iconBase + 'yellow.png'
+//   },
+//  m10: {
+//     icon: iconBase + 'young_green.png'
+//   }
+//  };
+
+
+var map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 52.5125322, lng: 13.3247559},
+    //center: {lat: 52.5155893, lng: 13.2761299},
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+  });
+
+  for (var gateway in gateways) {
+    var cityCircle = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.2,
+      strokeWeight: 1,
+      fillColor: '#FF0000',
+      fillOpacity: 0.2,
+      map: map,
+      center: gateways[gateway].center,
+      radius: Math.sqrt(gateways[gateway].radius) * 100
+    })
+  };
+
+  //var marker = new google.maps.Marker({
+  //  position: {lat: 52.5125322, lng: 13.3247559},
+  //  map: map,
+  //});
+};
+
+function addMarker(latlng) {
+  var marker = new google.maps.Marker({
+  position: latlng,
+  map: map,
+  icon: iconBase + 'blue.png'
+  });
+};
+
+$(document).ready(function() {
+  var uri= window.location.host + window.location.pathname + 'ws'
+  if (window.location.protocol === 'http:') {
+    new_uri = "ws:"+uri;
+  } else {
+    new_uri = "wss:"+uri;
+  }
+    
+  var ws, latlng;
+  if ('WebSocket' in window) {
+    ws = new WebSocket(new_uri);
+  }
+  else if ('MozWebSocket' in window) {
+    ws = new MozWebSocket(new_uri);
+  }
+  else {
+         
+      alert("<tr><td> your browser doesn't support web socket </td></tr>");
+        
+      return;
+  }
+        
+  ws.onopen = function() { 
+      console.log("Connected Socket");
+    };
+  
+  initMap();  
+  
+  ws.onmessage = function(evt) {
+    latlng = JSON.parse(evt.data);
+    console.log("Got marker at " + latlng.lat + ", " + latlng.lng, latlng);
+    addMarker(latlng)
+  };
+    
+    function closeConnect(){
+        ws.close();
+  }
+});
+  </script>
+   
+   <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZV7-NN1khnu5e8uyzRkHGj2HLvZykl68&signed_in=true&callback=initMap"></script>
+  
+  </body>
+</html>

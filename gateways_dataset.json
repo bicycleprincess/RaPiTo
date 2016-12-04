@@ -1,0 +1,159 @@
+{
+   "address" : {
+      "street" : "Brandenburische Strasse",
+      "hause number": 39,
+      "zipcode" : 10707,
+      "addtion" : "Fluxport",
+      "MAC": "c4:2c:03:30:a5:fe",
+      "latlon" : [ 52.49782, 13.3051813 ], 
+      "utm" : [
+      {
+         "east" : 384949.1,
+         "north": 5817759.6,
+         "zone" : 33
+      }
+      ]
+   },
+   "borough" : "Charottenburg",
+   "city" : "Berlin",
+   "gateway_info" : [
+      {
+         "part_number" : "SX1257",
+         "band" : [ 860, 1000 ],
+         "link_budget" : 158,
+         "rx_current" : 10,
+         "fx_max_dr" : 300,
+         "max_sensitivity" : -137
+      }
+   ],
+   "name" : "LoRa",
+   "gateway_id" : "10707-001"
+},
+
+{
+   "address" : {
+      "street" : "Samoa Strasse",
+      "hause number": 14,
+      "zipcode" : 13353,
+      "addtion" : "home",
+      "MAC": "d8:a2:5e:96:57:7a",
+      "latlon" : [ 52.5414599, 13.3502726 ],
+      "utm" : [
+      {
+         "east" : 388120.8,
+         "north" : 5822542.4,
+         "zone" : 33
+      }
+      ] 
+   },
+   "borough" : "Wedding",
+   "city" : "Berlin",
+   "gateway_info" : [
+      {
+         "part_number" : "SX1231",
+         "band" : [ 860, 960 ],
+         "link_budget" : 158,
+         "rx_current" : 10,
+         "fx_max_dr" : 300,
+         "max_sensitivity" : -137
+      }
+   ],
+   "name" : "LoRa",
+   "gateway_id" : "13353-001"
+},
+
+{
+   "address" : {
+      "street" : "Tauentzienstraße",
+      "hause number": 21,
+      "zipcode" : 10789,
+      "addtion" : "KaDeWe",
+      "MAC": "0a:a2:5e:96:57:7a",
+      "latlon" : [ 52.5016021, 13.3388043 ],
+      "utm" : [
+      {
+         "east" : 387241.1,
+         "north" : 5818127.2,
+         "zone" : 33
+      }
+      ]  
+   },
+   "borough" : "Charottenburg",
+   "city" : "Berlin",
+   "gateway_info" : [
+      {
+         "part_number" : "SX1231",
+         "band" : [ 860, 960 ],
+         "link_budget" : 158,
+         "rx_current" : 10,
+         "fx_max_dr" : 300,
+         "max_sensitivity" : -137
+      }
+   ],
+   "name" : "LoRa",
+   "gateway_id" : "10789-001"
+},
+
+{
+   "address" : {
+      "street" : "Spandauer Damm",
+      "hause number": 20,
+      "zipcode" : 14059,
+      "addtion" : "Charottenburg Schloss",
+      "MAC": "60:33:4b:ff:fe:8a:71:e2",
+      "latlon" : [ 52.5209312, 13.2781041 ],
+      "utm" : [
+      {
+         "east" : 383172.5,
+         "north" : 5820373.5,
+         "zone" : 33
+      }
+      ]
+   },
+   "borough" : "Charottenburg",
+   "city" : "Berlin",
+   "gateway_info" : [
+      {
+         "part_number" : "SX1231",
+         "band" : [ 860, 960 ],
+         "link_budget" : 158,
+         "rx_current" : 10,
+         "fx_max_dr" : 300,
+         "max_sensitivity" : -137
+      }
+   ],
+   "name" : "LoRa",
+   "gateway_id" : "14059-001"
+},
+
+{
+   "address" : {
+      "street" : "Strasse des 17. Juni",
+      "hause number": 135,
+      "zipcode" : 10623,
+      "addtion" : "TU Berlin",
+      "MAC": "fe80::daa2:5eff:fe96:577a",
+      "latlon" : [ 52.5125322, 13.3247559 ],
+      "utm" : [
+      {
+         "east" : 386315.8,
+         "north" : 5819364.9,
+         "zone" : 33
+      }
+      ]
+   },
+   "borough" : "Charottenburg",
+   "city" : "Berlin",
+   "gateway_info" : [
+      {
+         "part_number" : "SX1231",
+         "band" : [ 860, 960 ],
+         "link_budget" : 158,
+         "rx_current" : 10,
+         "fx_max_dr" : 300,
+         "max_sensitivity" : -137
+      }
+   ],
+   "name" : "LoRa",
+   "gateway_id" : "10623-001"
+}
