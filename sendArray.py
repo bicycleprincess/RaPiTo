@@ -2,7 +2,7 @@
 from udpServer import *
 
 import numpy as np
-import pika, time
+#import pika, time
 
 try:
 	import json
@@ -11,7 +11,7 @@ except ImportError:
 else:
 	import simplejson as json
 
-filepath = '/Users/yangwil/ENV/Testbed/RaPiToMongoMap/gateways.json'
+filepath = 'gateways.json'
 
 def connecter():
 
@@ -39,13 +39,14 @@ def arrayGen():
 	res = ary.reshape(6,4)[1:6, :]
 	print res
 	print ''
-	return res
+	#return res
+	print res
 	f.close()
 
 
-#if __name__ == '__main__':
-#	arrayGen()	
-
+if __name__ == '__main__':
+	arrayGen()	
+"""
 def array2json(array):
 	'''array format function:
 
@@ -75,3 +76,4 @@ if __name__ == '__main__':
 		time.sleep(1)
 
 	connection.close()
+"""

@@ -1,12 +1,7 @@
-# kill the goddamn port
-# $lsof -i:8080
-# $ kill -9 process_id
-
 import pika
 import logging, os
 
-from cal import *
-from cal import json2array
+# import the real function you want
 from threading import Thread
 
 import tornado.ioloop
@@ -40,19 +35,14 @@ def disconnect_to_rabbitmq():
 	logging.info('Disconnected from Rabbitmq')
 
 def consumer_callback(ch, method, properties, body):
-    logging.info((method.delivery_tag, body))
-    ary = json2array(body)
-    cal = Cal(ary)
-    pe = cal.ml()
-    for itm in clients:
-		itm.write_message(pe)
+	# your main funcion goes here
+	pass
 
 class SocketHandler(tornado.websocket.WebSocketHandler):
 
 	def open(self):
 		logging.info('WebSocket opened')
 		clients.append(self)
-		#self.connections.add(self)
 
 	def on_message(self):
 		pass
@@ -60,12 +50,9 @@ class SocketHandler(tornado.websocket.WebSocketHandler):
 	def on_close(self):
 		logging.info('WebSocket closed')
 		clients.remove(self)
-		#self.connections.remove(self)
 
 class MainHandler(tornado.web.RequestHandler):
 	def get(self):
-		#self.render("websocket.html")
-		#self.render("maps.html")
 		self.render("index.html")
 
 
