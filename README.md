@@ -1,4 +1,5 @@
-# This is a simple IoT implementation. RaPiTo -- RabbitMQ + Pika + Tornado
+# This is a simple IoT implementation. 
+	RaPiTo -- RabbitMQ + Pika + Tornado
 	
 ## Requirments
 
