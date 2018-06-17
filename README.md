@@ -9,7 +9,7 @@
 
 ## Before Using
 	
-	* You need a **google API kay** in *index.html*
+	* You need a **google API key** in *index.html*
 	* Change the **gateway MAC** address in *db.py* also the *json* files
 	* in the prototype the chips send location coordinates to the gateway, *sendArray.py* is the simulator function
 	* Take a look at *webServer.py* and the comments and write the function 
